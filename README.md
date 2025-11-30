@@ -1,7 +1,7 @@
-# Sistema de Gestión Fotográfica
+# Sistema de Gestión Comercial
 
 ## Descripción
-Sistema Spring Boot para gestión comercial de servicios fotográficos.
+Sistema Spring Boot para gestión de materias primas, procesos y control de productos y registros de ventas.
 
 ## Stack Tecnológico
 - Java 17
@@ -14,7 +14,7 @@ Sistema Spring Boot para gestión comercial de servicios fotográficos.
 
 ### Primeros Pasos
 ```bash
-git clone https://github.com/emanuelperacchia/fotografia.git
-cd fotografia
+git clone https://github.com/emanuelperacchia/gestion_ventas.git
+cd gestion_ventas
 git checkout development
 mvn clean install
