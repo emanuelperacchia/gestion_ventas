@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: gestion_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: gestion_ventas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 159623
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - gestion_net
+
+  app:
+    build: .
+    container_name: gestion_app
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/gestion_ventas
+      DB_USER: postgres
+      DB_PASSWORD: 159623
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8080:8080"
+    networks:
+      - gestion_net
+
+networks:
+  gestion_net:
